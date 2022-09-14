@@ -5,7 +5,9 @@
 fn main() {
     let vec0 = Vec::new();
 
-    let mut vec1 = fill_vec(vec0.clone());
+    let mut vec1 = fill_vec(vec0);
+
+    let vec0 = vec1.clone();
 
     // Do not change the following line!
     println!("{} has length {} content `{:?}`", "vec0", vec0.len(), vec0);
@@ -22,5 +24,5 @@ fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
     vec.push(44);
     vec.push(66);
 
-    return vec
+    vec
 }
