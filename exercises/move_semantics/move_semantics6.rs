@@ -5,7 +5,7 @@
 // I AM NOT DONE
 
 fn main() {
-    let data = "Rust is great!".to_string();
+    let data :String = ("Rust is great!").to_string();
 
     get_char(data.clone());
 
