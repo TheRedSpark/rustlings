@@ -1,17 +1,12 @@
-// structs1.rs
-// Address all the TODOs to make the tests pass!
-// Execute `rustlings hint structs1` or use the `hint` watch subcommand for a hint.
-
 struct ColorClassicStruct {
-    red: u16,
-    green: u16,
-    blue: u16,
+    name: String,
+    hex: String,
 }
 
-struct ColorTupleStruct(u16, u16, u16);
+struct ColorTupleStruct(String, String);
 
 #[derive(Debug)]
-struct UnitLikeStruct();
+struct UnitStruct;
 
 #[cfg(test)]
 mod tests {
@@ -20,28 +15,30 @@ mod tests {
     #[test]
     fn classic_c_structs() {
         let green = ColorClassicStruct {
-            red: 0,
-            green: 255,
-            blue: 0,
+            name: String::from("green"),
+            hex: String::from("#00FF00"),
         };
-        assert_eq!(green.red, 0);
-        assert_eq!(green.green, 255);
-        assert_eq!(green.blue, 0);
+
+        assert_eq!(green.name, "green");
+        assert_eq!(green.hex, "#00FF00");
     }
 
     #[test]
     fn tuple_structs() {
-        let green = ColorTupleStruct(0, 255, 0);
-        assert_eq!(green.0, 0);
-        assert_eq!(green.1, 255);
-        assert_eq!(green.2, 0);
+        let green = ColorTupleStruct(
+            String::from("green"),
+            String::from("#00FF00"),
+        );
+
+        assert_eq!(green.0, "green");
+        assert_eq!(green.1, "#00FF00");
     }
 
     #[test]
     fn unit_structs() {
-        let unit_like_struct = UnitLikeStruct();
-        let message = format!("{:?}s are fun!", unit_like_struct);
+        let unit_struct = UnitStruct;
+        let message = format!("{:?}s are fun!", unit_struct);
 
-        assert_eq!(message, "UnitLikeStructs are fun!");
+        assert_eq!(message, "UnitStructs are fun!");
     }
 }
