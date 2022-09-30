@@ -5,8 +5,9 @@
 
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
-    input.trim();
-    return input;
+    input.trim_right().chars().rev();
+    let new_string = String::from(input);
+    return new_string;
 }
 
 fn compose_me(input: &str) -> String {
@@ -22,7 +23,6 @@ fn replace_me(input: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-
 
     #[test]
     fn trim_a_string() {
